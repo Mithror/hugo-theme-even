@@ -4,7 +4,7 @@
       {{- $realName := slicestr $name 2 }}
       {{- if eq $realName "gitea" }}
         <a href="{{ $path | safeURL }}" title="{{ $realName }}">
-          <img src="img/gitea.svg" width="30px" height="30px" style="position:relative;top:-9px"/>
+          <img src="/img/gitea.svg" width="30px" height="30px" style="position:relative;top:-9px"/>
         </a>
       {{else}}
         <a href="{{ $path | safeURL }}" class="iconfont icon-{{ $realName }}" title="{{ $realName }}"></a>

@@ -2,7 +2,13 @@
   {{- range $name, $path := .Site.Params.social }}
     {{- if $path }}
       {{- $realName := slicestr $name 2 }}
-      <a href="{{ $path | safeURL }}" class="iconfont icon-{{ $realName }}" title="{{ $realName }}"></a>
+      {{- if eq $realName "gitea" }}
+        <a href="{{ $path | safeURL }}" title="{{ $realName }}">
+          <img src="img/gitea.svg" width="30px" height="30px" style="position:relative;top:-9px"/>
+        </a>
+      {{else}}
+        <a href="{{ $path | safeURL }}" class="iconfont icon-{{ $realName }}" title="{{ $realName }}"></a>
+      {{- end}}
     {{- end }}
   {{- end }}
   {{ if .Site.LanguagePrefix -}}
